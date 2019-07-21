@@ -1,2 +1,9 @@
-Joerg Plewe - original Author of the Atari ST/TT version
-Ed Gow - OS9 port
+Joerg Plewe              original Author of the Atari ST/TT version, F68K kernel,akernel extensions
+Ed Gow                   OS9 port
+Laxen & Perry            M68000 Assembler
+Hartwig Luedemann        L&P assembler on 32 bit
+Dirk Kutscher            Sinclair QL loader
+Markus Redeker           Lots of bugs and tools, F-EDIT
+Reinhard Scharnagl       Disassembler
+Wolfgang Schemmert       Amiga loader
+Thomas Beierlein         OS9 loader
