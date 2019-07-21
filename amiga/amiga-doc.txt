@@ -1,0 +1,61 @@
+The amiga support for the F68K consists of 4 files:
+--- LOAD4TH		the loader
+--- LOAD4TH.c 		it's source
+--- LOAD4TH.info 	the logo to start it from the workbench
+--- and this file.
+
+In general, it's in functional agreement with the atari Loader for 
+the F68K, especially concerning the environment handling with the 
+configuration file F68K.CFG. 
+I added two little options to get screen data printed on paper:
+--- Starting "LOAD4TH p" opens the file "dump.dat" in the current
+	directory and puts all bytes into it, that passed through the 
+	"Emit" function.
+--- starting "LOAD4TH s" does the same with the exception, that 
+	CR's are are filtered out, furthermore any byte that follow a
+	LF. This provides a very simple and effective method to print
+	screens. (I like programming in bed, and because the amiga 
+	isn't a laptop..) It is applied to the F68K "list" word, and
+	very little extra work on a conventional editor is necessary to
+	clean out the rest of OS-garbage contained in the file.
+
+Since the amiga	uses some special keycodes, three commands of the
+fullscreen-editor had to be changed:
+	^F instead of ^? calls the help screen
+	^V instead of ^< does #1.load
+	^\ instead of ^> does load.exit
+
+Despite of this, all operation is the same as described in the F68K
+original documentation. Before first use, the blockfiles have to 
+be "unmount"ed and "mount"ed again as described in the technical
+manual.
+
+To start F68K from the workbench, the ".info"-file has to be 
+copied into the same directory, where the loader is. It will 
+put the appropriate logo on the workbench. The p and s option
+are available from the CLI only.
+If you have received these files not on an amiga-formatted disk,
+the file "LOAD4TH.info" might have been renamed as "LOAD4TH.inf"
+to be in line with naming rules. When transferring this file to 
+the amiga, it must be renamed to "LOAD4TH.info", otherwise your 
+workbench will not show it.
+
+There is (at the present state of development) one major problem, 
+which should not be disregarded:
+This loader opens a RAW: window on the amiga, which is quite easy
+to program, but has a fixed line resolution of 77 true characters
+per row. (There is a horizontal resolution of 80 Characters of this
+standard font, but two are lost for the borderlines and one is
+reserved to place the leading cursor). If anybody knows a simple
+trick to smash this on DOS-level, let me hear.
+
+Questions and hints:
+	Wolfgang Schemmert
+	Luisenstr. 51
+	W-6050 Offenbach
+	Tel. 069-88 56 06
+	FAX  069-81 10 50
+
+
+
+
